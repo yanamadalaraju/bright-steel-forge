@@ -4,6 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Cog, Layers, Factory, Hammer, Sparkles, Shield, ArrowRight } from "lucide-react";
 import Servicescards from "@/components/Servicescompo/Servicescards";
 import ProcessTimeline from "@/components/Servicescompo/ProcessTimeline";
+import InfrastructureSection from "@/components/Servicescompo/InfrastructureSection";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -79,6 +80,8 @@ function ServicesPage() {
       </section> */}
 
       <ProcessTimeline />
+
+      <InfrastructureSection />
 
     </>
   );
