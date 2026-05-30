@@ -1,4 +1,4 @@
-import steelImage from "@/assets/steel5.jpg"; // Replace with your image
+import steelImage from "@/assets/steel2.jpg"; 
 
 export default function AboutEpitome() {
   return (

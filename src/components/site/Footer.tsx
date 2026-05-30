@@ -152,9 +152,9 @@ export function Footer() {
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-widest text-[--brand-deep] font-semibold">Contact</div>
             <ul className="mt-4 space-y-3 text-sm text-foreground/80">
-              <li className="flex items-start gap-3"><MapPin className="w-4 h-4 text-[--brand] mt-0.5" /> Plot 24, Industrial Estate, Pune, Maharashtra, India</li>
-              <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-[--brand]" /> +91 98765 43210</li>
-              <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-[--brand]" /> hello@epitomesteel.com</li>
+              <li className="flex items-start gap-3"><MapPin className="w-8 h-8 text-[--brand] mt-0.5" /> 11, 3rd Floor, Astitva Building, Railway Parallel Road, Nehru Nagar, Seshadripuram, Bengaluru – 560020</li>
+              <li className="flex items-center gap-3"><Phone className="w-4 h-4 text-[--brand]" /> +91 9538204699</li>
+              <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-[--brand]" /> epitomesteelpvtltd@gmail.com</li>
             </ul>
             <Link to="/contact" className="mt-5 inline-flex items-center gap-1.5 btn-orange px-4 py-2 rounded-xl text-[13px] font-semibold">
               Start a Project <ArrowUpRight className="w-4 h-4" />
