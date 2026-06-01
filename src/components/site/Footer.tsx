@@ -83,7 +83,7 @@
 
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram, ArrowUpRight } from "lucide-react";
-import logo from "../../assets/logo-removebg-preview.png";
+import logo from "../../assets/newlogo.png";
 
 export function Footer() {
   return (

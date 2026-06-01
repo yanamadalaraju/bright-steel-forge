@@ -105,7 +105,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Home, Info, Package, Settings, FolderKanban, Building2, Factory, Award, Newspaper, Briefcase, Phone } from "lucide-react";
-import logo from "../../assets/logo-removebg-preview.png";
+import logo from "../../assets/newlogo.png";
 
 const NAV = [
   { to: "/", label: "Home", icon: Home },
