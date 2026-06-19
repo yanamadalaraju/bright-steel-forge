@@ -1,4 +1,4 @@
-import steelImage from "@/assets/steel2.jpg"; 
+import steelImage from "@/assets/building.jpg"; 
 
 export default function AboutEpitome() {
   return (
@@ -59,14 +59,23 @@ export default function AboutEpitome() {
               className="relative h-[500px] w-full rounded-3xl object-cover shadow-2xl"
             />
 
-            <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-5 shadow-xl">
+            {/* <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-5 shadow-xl">
               <h4 className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-xl font-bold text-transparent">
                WE ALSO UNDERTAKE
               </h4>
               <p className="mt-1 text-sm text-gray-600">
                 Fabrication Job Work
               </p>
-            </div>
+            </div> */}
+
+            <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-5 shadow-xl">
+  <h4 className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-xl font-bold text-transparent">
+    JOB WORKER
+  </h4>
+  <p className="mt-1 text-sm text-gray-600">
+    We Undertake Steel Conversion Work
+  </p>
+        </div>
           </div>
         </div>
       </div>

@@ -114,10 +114,10 @@ const NAV = [
   { to: "/services", label: "Services", icon: Settings },
   { to: "/projects", label: "Projects", icon: FolderKanban },
   { to: "/industries", label: "Industries", icon: Building2 },
-  { to: "/manufacturing", label: "Manufacturing", icon: Factory },
+  // { to: "/manufacturing", label: "Manufacturing", icon: Factory },
   { to: "/certifications", label: "Quality", icon: Award },
-  { to: "/blog", label: "Insights", icon: Newspaper },
-  { to: "/careers", label: "Careers", icon: Briefcase },
+  // { to: "/blog", label: "Insights", icon: Newspaper },
+  // { to: "/careers", label: "Careers", icon: Briefcase },
   { to: "/contact", label: "Contact", icon: Phone },
 ] as const;
 

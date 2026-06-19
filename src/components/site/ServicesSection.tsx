@@ -84,15 +84,15 @@ const services = [
     stat: "24/7 execution"
   },
   { 
-    t: "Quality & Safety", 
-    d: "ISO 9001, ISO 14001 & OHSAS 18001 governed processes.", 
+    t: "Steel Supply", 
+    d: "Wholsale traders in MS plates, channels, angels, tubes, TMT bars, cement and all type of construction  materials. ", 
     i: Shield,
     color: "#EF4444",
     stat: "Zero incidents"
   },
   { 
     t: "Installation", 
-    d: "Pan-India and global erection with project controls.", 
+    d: "Pan-India installation and global erection with project controls.", 
     i: Hammer,
     color: "#F59E0B",
     stat: "42 countries"

@@ -78,6 +78,7 @@ import {
   SunMedium,
   Server
 } from "lucide-react";
+import IndustrySolutions from "@/components/Industriescompo/IndustrySolutions";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -163,7 +164,7 @@ function IndustriesPage() {
 
 
       {/* Industry Sectors */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -187,36 +188,36 @@ function IndustriesPage() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                {/* Gradient Border Effect */}
+
                 <div className={`absolute inset-0 bg-gradient-to-r ${it.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`} style={{ padding: '2px' }}>
                   <div className="absolute inset-[2px] bg-white rounded-2xl" />
                 </div>
                 
                 <div className="relative p-7">
-                  {/* Icon */}
+                
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${it.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <it.i className="w-7 h-7 text-white" />
                   </div>
                   
-                  {/* Title */}
+                 
                   <h3 className="mt-5 font-display font-bold text-xl">{it.t}</h3>
                   
-                  {/* Description */}
+          
                   <p className="mt-2 text-sm text-muted-foreground">{it.d}</p>
                   
-                  {/* Stats Badge */}
+                
                   <div className="mt-4 inline-flex items-center gap-1 px-3 py-1 bg-blue-50 rounded-full">
                     <TrendingUp className="w-3 h-3 text-blue-600" />
                     <span className="text-xs font-semibold text-blue-600">{it.stats}</span>
                   </div>
                   
-                  {/* Projects */}
+                 
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wider mb-2">Key Projects</p>
                     <p className="text-sm text-gray-600">{it.projects}</p>
                   </div>
                   
-                  {/* Learn More Link */}
+                 
                   <Link
                     to="/contact"
                     className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:gap-2 transition-all"
@@ -229,7 +230,9 @@ function IndustriesPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <IndustrySolutions />
 
       <section className="py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-cyan-50">
   

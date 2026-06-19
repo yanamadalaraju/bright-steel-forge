@@ -289,17 +289,17 @@ import {
 import pebImg from "@/assets/project-peb.jpg";
 import steelImg from "@/assets/product-shed.jpg";
 import roofingImg from "@/assets/product-roofing.jpg";
-import fabricationImg from "@/assets/steel26.jpg";
-import mezzanineImg from "@/assets/manufacturing.jpg";
+import fabricationImg from "@/assets/customizedheavyfabrication.jpg";
+import mezzanineImg from "@/assets/mazennineflooring.jpg";
 import galvanizedImg from "@/assets/steel1.jpg";
 import deckingImg from "@/assets/steel2.jpg";
 import staircaseImg from "@/assets/steel3.jpg";
-import polycarbonateImg from "@/assets/steel5.jpg";
-import purlinImg from "@/assets/steel25.jpg";
-import turboImg from "@/assets/steel7.jpg";
-import rollingShutterImg from "@/assets/steel21.jpg";
-import ridgeVentilatorImg from "@/assets/steel22.jpg";
-import louversImg from "@/assets/steel23.jpg";
+import polycarbonateImg from "@/assets/polycarbonate.jpg";
+import purlinImg from "@/assets/Z&C.jpg";
+import turboImg from "@/assets/truboventilators.jpg";
+import rollingShutterImg from "@/assets/stellrollingshutter.jpg";
+import ridgeVentilatorImg from "@/assets/ridgeventilators.jpg";
+import louversImg from "@/assets/louvers.jpg";
 
 interface Product {
   category: string;
@@ -334,17 +334,17 @@ const products: Product[] = [
     description:
       "Maximize usable space with custom-designed mezzanine flooring solutions.",
   },
+  // {
+  //   category: "Roofing",
+  //   title: "Color Coated Galvalume Sheets",
+  //   image: roofingImg,
+  //   icon: Sheet,
+  //   description:
+  //     "Premium-quality roofing sheets offering corrosion resistance and long-lasting performance.",
+  // },
   {
     category: "Roofing",
-    title: "Color Coated Galvalume Sheets",
-    image: roofingImg,
-    icon: Sheet,
-    description:
-      "Premium-quality roofing sheets offering corrosion resistance and long-lasting performance.",
-  },
-  {
-    category: "Roofing",
-    title: "Galvanized Sheets",
+    title: "Color Coated Galvanized Sheets",
     image: galvanizedImg,
     icon: Shield,
     description:
@@ -376,7 +376,7 @@ const products: Product[] = [
   },
   {
     category: "Fabrication",
-    title: "Customized Fabrication",
+    title: "Customised & heavy fabrication ",
     image: fabricationImg,
     icon: Cog,
     description:
@@ -408,11 +408,11 @@ const products: Product[] = [
   },
   {
     category: "Roofing",
-    title: "Ridge Ventilators",
+    title: " Puf Panels",
     image: ridgeVentilatorImg,
     icon: Fan,
     description:
-      "Advanced ridge ventilation solutions for improved temperature control and airflow.",
+      "High-performance sandwich structures comprising a rigid insulated core bound between two protective metal or composite sheets.",
   },
   {
     category: "Roofing",

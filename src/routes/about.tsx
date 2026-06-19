@@ -37,7 +37,7 @@ function AboutPage() {
     <>
       <PageHero
         eyebrow="About Epitome"
-        title="Three decades of structural excellence."
+        title="Two decades of structural excellence."
         subtitle="From a single fabrication bay in Pune to one of the region's most trusted steel and civil structures partners — engineered with precision, delivered with trust."
       />
 
@@ -89,11 +89,11 @@ function AboutPage() {
         </div>
       </section> */}
 
-      <TimelinePage />
-      <LeadershipPage />
+      {/* <TimelinePage /> */}
+      {/* <LeadershipPage /> */}
 
       {/* Infra */}
-      <section className="py-24 bg-gradient-to-b from-[#F8FAFC] to-white relative overflow-hidden">
+      {/* <section className="py-24 bg-gradient-to-b from-[#F8FAFC] to-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[--brand]/5 via-transparent to-transparent" />
         <div className="mx-auto max-w-7xl px-4 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -161,7 +161,7 @@ function AboutPage() {
     ))}
   </div>
 
-  {/* Quotation Style Text */}
+
   <div className="relative">
    
 
@@ -176,7 +176,76 @@ function AboutPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <section className="py-24 bg-gradient-to-b from-[#F8FAFC] to-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[--brand]/5 via-transparent to-transparent" />
+
+  <div className="mx-auto max-w-5xl px-4 relative text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="space-y-8"
+    >
+      <span className="chip">Infrastructure</span>
+
+      <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+                A facility built for <span className="text-gradient">global standards</span>
+              </h2>
+
+      <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
+        Our modern manufacturing facility is equipped with advanced fabrication,
+        welding, and processing technologies that enable us to deliver
+        high-quality steel structures with unmatched precision, efficiency,
+        and reliability.
+      </p>
+
+      {/* Features */}
+      <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto pt-6">
+        {[
+          "Automatic Beam Welding / Heavy Fabrication Line",
+          "Robotic Welding Systems",
+          "CNC 3D Laser cutting Machine for Sheet upto 50 mm ",
+        
+          "Ready-Made Beam Processing Facility",
+          
+        ].map((feature, i) => (
+          <motion.div
+            key={feature}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition-all"
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-50">
+              <CheckCircle2 className="h-5 w-5 text-cyan-600" />
+            </div>
+
+            <span className="text-left font-medium text-slate-700">
+              {feature}
+            </span>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Bottom Trust Badge */}
+      <div className="pt-8 flex justify-center">
+        <div className="rounded-2xl border border-slate-200 bg-white px-8 py-5 shadow-lg">
+          <p className="text-base md:text-lg italic font-medium text-slate-700">
+            “ Equipped with Cutting-Edge Fabrication Technology for
+            <span className="font-bold text-cyan-600">
+              {" "}High Precision Manufacturing
+            </span>
+            ”
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+  </section>
+
     </>
   );
 }

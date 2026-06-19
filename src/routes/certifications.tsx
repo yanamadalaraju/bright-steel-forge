@@ -142,7 +142,7 @@ function CertPage() {
      
 
       {/* Certifications Grid */}
-      <section className="pb-16 pt-20">
+      {/* <section className="pb-16 pt-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center mb-12">
             <span className="text-sm font-semibold text-cyan-600 uppercase tracking-wider">Our Credentials</span>
@@ -194,7 +194,7 @@ function CertPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Quality Pillars Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-cyan-50">
@@ -260,7 +260,7 @@ function CertPage() {
       </section>
 
       {/* Compliance Badges */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="bg-gradient-to-r from-cyan-600 to-blue-700 rounded-3xl p-12 text-center text-white shadow-2xl">
             <Award className="w-16 h-16 mx-auto mb-6 opacity-80" />
@@ -289,10 +289,10 @@ function CertPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Download Section */}
-      <section className="py-20 bg-slate-50">
+      {/* <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex-1 text-center lg:text-left">
@@ -315,7 +315,7 @@ function CertPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

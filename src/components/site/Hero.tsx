@@ -1064,6 +1064,8 @@
 
 
 
+
+
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
@@ -1182,7 +1184,7 @@ const slides = [
     subtitle: "Engineering Trust Worldwide.",
 
     description:
-      "ISO 9001, ISO 14001 & OHSAS 18001 certified processes delivering structural solutions across 42 countries with uncompromising quality and safety.",
+      "Delivering Structural Solutions with un comprimising Quality and Safety",
 
     image: heroImg3,
 
@@ -1212,12 +1214,12 @@ const slides = [
       color: "trust",
     },
 
-    stats: [
-      { v: 28, s: "+", l: "Years of Excellence" },
-      { v: 42, s: "", l: "Countries Served" },
-      { v: 1200, s: "+", l: "Projects Delivered" },
-      { v: 100, s: "%", l: "Client Satisfaction" },
-    ],
+    // stats: [
+    //   { v: 28, s: "+", l: "Years of Excellence" },
+    //   { v: 42, s: "", l: "Countries Served" },
+    //   { v: 1200, s: "+", l: "Projects Delivered" },
+    //   { v: 100, s: "%", l: "Client Satisfaction" },
+    // ],
   },
 ];
 
@@ -1442,7 +1444,7 @@ export default function Hero() {
                   </Link>
                 </div>
 
-                <motion.div
+                {/* <motion.div
                   key={`stats-${currentSlide}`}
                   variants={statsVariants}
                   initial="initial"
@@ -1464,7 +1466,7 @@ export default function Hero() {
                       </div>
                     </div>
                   ))}
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </AnimatePresence>
           </div>

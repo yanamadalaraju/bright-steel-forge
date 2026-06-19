@@ -350,20 +350,20 @@ function Home() {
   return (
     <div className="relative">
       <Hero />
-      <LogoSlider />
+      {/* <LogoSlider /> */}
       <ProductsSection />
       <ServicesSection />
       
       {/* Video Sections */}
-      <ProcessVideo />
+      {/* <ProcessVideo /> */}
       <ProjectVideoShowcase />
       
       <ManufacturingSection />
       
       {/* More Video Sections */}
-      <FactoryTour />
-      <VideoTestimonials />
-      <BehindTheScenes />
+      {/* <FactoryTour /> */}
+      {/* <VideoTestimonials /> */}
+      {/* <BehindTheScenes /> */}
       
       <CTASection />
     </div>

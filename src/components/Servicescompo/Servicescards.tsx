@@ -13,15 +13,15 @@ import {
 const services = [
   {
     i: Cog,
-    t: "Steel Fabrication",
-    d: "CNC processing, robotic welding and automated drilling engineered for precision and durability.",
+    t: "Fabrication Job Worker",
+    d: "We undertake Steel Conversion work.",
     img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop",
   },
   {
     i: Layers,
     t: "Structural Engineering",
     d: "Advanced BIM-driven engineering solutions with complete compliance and analysis.",
-    img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop",
+    img: "https://i.pinimg.com/736x/63/ef/b0/63efb0b68c36d0c385c93cb0a36518d1.jpg",
   },
   {
     i: Factory,
@@ -39,7 +39,7 @@ const services = [
     i: Sparkles,
     t: "Design Consultancy",
     d: "Creative and cost-effective engineering consultancy from concept to commissioning.",
-    img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop",
+    img: "https://i.pinimg.com/1200x/b3/75/9f/b3759f9a660736ed2fc6185442ee2010.jpg",
   },
   {
     i: Shield,
