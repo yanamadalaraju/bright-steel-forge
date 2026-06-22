@@ -448,7 +448,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 // API URL - make sure this matches your backend
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
 interface ContactForm {
     full_name: string;
@@ -501,7 +501,7 @@ function ContactPage() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     setErrorMessage('');
@@ -511,34 +511,63 @@ function ContactPage() {
       console.log('📤 Submitting form to:', `${API_URL}/api/contact`);
       console.log('📝 Form data:', formData);
 
+      // Add timeout to fetch
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+
       const response = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+        signal: controller.signal
       });
 
+      clearTimeout(timeoutId);
+
       console.log('📥 Response status:', response.status);
+      console.log('📥 Response headers:', response.headers);
 
       const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-        const text = await response.text();
-        console.error('❌ Non-JSON response:', text);
-        throw new Error('Server returned an invalid response. Please try again.');
-      }
-
-      const data = await response.json();
-      console.log('📦 Response data:', data);
+      console.log('📥 Content-Type:', contentType);
 
       if (!response.ok) {
-        if (data.details && Array.isArray(data.details)) {
-          setValidationErrors(data.details);
-          const errorMessages = data.details.map((err: ValidationError) => err.msg).join(', ');
-          throw new Error(errorMessages);
+        // Try to get error message from response
+        let errorMessage = 'Failed to submit. Please try again.';
+        try {
+          const errorData = await response.json();
+          console.log('📥 Error data:', errorData);
+          if (errorData.error) {
+            errorMessage = errorData.error;
+          }
+          if (errorData.details && Array.isArray(errorData.details)) {
+            setValidationErrors(errorData.details);
+            const errorMessages = errorData.details.map((err: ValidationError) => err.msg).join(', ');
+            errorMessage = errorMessages;
+          }
+        } catch (e) {
+          // If response is not JSON, try to get text
+          try {
+            const text = await response.text();
+            console.log('📥 Error text:', text);
+            errorMessage = text || errorMessage;
+          } catch (textError) {
+            console.error('Could not parse error response');
+          }
         }
-        throw new Error(data.error || 'Failed to submit. Please try again.');
+        throw new Error(errorMessage);
+      }
+
+      // Parse successful response
+      let data;
+      try {
+        data = await response.json();
+        console.log('📦 Response data:', data);
+      } catch (parseError) {
+        console.error('❌ Failed to parse JSON response:', parseError);
+        throw new Error('Server returned an invalid response. Please try again.');
       }
 
       setStatus('success');
@@ -560,8 +589,15 @@ function ContactPage() {
 
     } catch (error) {
       console.error('❌ Submit error:', error);
+      
+      // Handle abort error
+      if (error instanceof Error && error.name === 'AbortError') {
+        setErrorMessage('Request timed out. Please try again.');
+      } else {
+        setErrorMessage(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
+      }
+      
       setStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
       
       setTimeout(() => {
         setStatus('idle');
@@ -569,7 +605,6 @@ function ContactPage() {
       }, 10000);
     }
   };
-
   const getFieldError = (fieldName: string) => {
     const error = validationErrors.find(err => err.param === fieldName);
     return error ? error.msg : null;
