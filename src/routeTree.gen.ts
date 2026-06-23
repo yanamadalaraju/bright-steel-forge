@@ -14,8 +14,10 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ManufacturingRouteImport } from './routes/manufacturing'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CertificationsRouteImport } from './routes/certifications'
 import { Route as CareersRouteImport } from './routes/careers'
@@ -24,6 +26,8 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as TermsConditionsRouteImport } from './routes/TermsConditions'
 import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardSubmissionsRouteImport } from './routes/dashboard/submissions'
+import { Route as AdminAdmincontactsRouteImport } from './routes/admin/admincontacts'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -50,6 +54,11 @@ const ManufacturingRoute = ManufacturingRouteImport.update({
   path: '/manufacturing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
@@ -58,6 +67,11 @@ const IndustriesRoute = IndustriesRouteImport.update({
 const DownloadsRoute = DownloadsRouteImport.update({
   id: '/downloads',
   path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -100,6 +114,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardSubmissionsRoute = DashboardSubmissionsRouteImport.update({
+  id: '/submissions',
+  path: '/submissions',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const AdminAdmincontactsRoute = AdminAdmincontactsRouteImport.update({
+  id: '/admin/admincontacts',
+  path: '/admin/admincontacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -110,13 +134,17 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/industries': typeof IndustriesRoute
+  '/login': typeof LoginRoute
   '/manufacturing': typeof ManufacturingRoute
   '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/admincontacts': typeof AdminAdmincontactsRoute
+  '/dashboard/submissions': typeof DashboardSubmissionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -127,13 +155,17 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/industries': typeof IndustriesRoute
+  '/login': typeof LoginRoute
   '/manufacturing': typeof ManufacturingRoute
   '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/admincontacts': typeof AdminAdmincontactsRoute
+  '/dashboard/submissions': typeof DashboardSubmissionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -145,13 +177,17 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/certifications': typeof CertificationsRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/downloads': typeof DownloadsRoute
   '/industries': typeof IndustriesRoute
+  '/login': typeof LoginRoute
   '/manufacturing': typeof ManufacturingRoute
   '/products': typeof ProductsRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/admincontacts': typeof AdminAdmincontactsRoute
+  '/dashboard/submissions': typeof DashboardSubmissionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -164,13 +200,17 @@ export interface FileRouteTypes {
     | '/careers'
     | '/certifications'
     | '/contact'
+    | '/dashboard'
     | '/downloads'
     | '/industries'
+    | '/login'
     | '/manufacturing'
     | '/products'
     | '/projects'
     | '/services'
     | '/sitemap.xml'
+    | '/admin/admincontacts'
+    | '/dashboard/submissions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -181,13 +221,17 @@ export interface FileRouteTypes {
     | '/careers'
     | '/certifications'
     | '/contact'
+    | '/dashboard'
     | '/downloads'
     | '/industries'
+    | '/login'
     | '/manufacturing'
     | '/products'
     | '/projects'
     | '/services'
     | '/sitemap.xml'
+    | '/admin/admincontacts'
+    | '/dashboard/submissions'
   id:
     | '__root__'
     | '/'
@@ -198,13 +242,17 @@ export interface FileRouteTypes {
     | '/careers'
     | '/certifications'
     | '/contact'
+    | '/dashboard'
     | '/downloads'
     | '/industries'
+    | '/login'
     | '/manufacturing'
     | '/products'
     | '/projects'
     | '/services'
     | '/sitemap.xml'
+    | '/admin/admincontacts'
+    | '/dashboard/submissions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -216,13 +264,16 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   CertificationsRoute: typeof CertificationsRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
   DownloadsRoute: typeof DownloadsRoute
   IndustriesRoute: typeof IndustriesRoute
+  LoginRoute: typeof LoginRoute
   ManufacturingRoute: typeof ManufacturingRoute
   ProductsRoute: typeof ProductsRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  AdminAdmincontactsRoute: typeof AdminAdmincontactsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -262,6 +313,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManufacturingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -274,6 +332,13 @@ declare module '@tanstack/react-router' {
       path: '/downloads'
       fullPath: '/downloads'
       preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -332,8 +397,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/submissions': {
+      id: '/dashboard/submissions'
+      path: '/submissions'
+      fullPath: '/dashboard/submissions'
+      preLoaderRoute: typeof DashboardSubmissionsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/admin/admincontacts': {
+      id: '/admin/admincontacts'
+      path: '/admin/admincontacts'
+      fullPath: '/admin/admincontacts'
+      preLoaderRoute: typeof AdminAdmincontactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface DashboardRouteChildren {
+  DashboardSubmissionsRoute: typeof DashboardSubmissionsRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardSubmissionsRoute: DashboardSubmissionsRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -344,13 +435,16 @@ const rootRouteChildren: RootRouteChildren = {
   CareersRoute: CareersRoute,
   CertificationsRoute: CertificationsRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRouteWithChildren,
   DownloadsRoute: DownloadsRoute,
   IndustriesRoute: IndustriesRoute,
+  LoginRoute: LoginRoute,
   ManufacturingRoute: ManufacturingRoute,
   ProductsRoute: ProductsRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  AdminAdmincontactsRoute: AdminAdmincontactsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
