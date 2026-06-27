@@ -68,7 +68,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight, Layers, Building2, Boxes, Hammer } from "lucide-react";
 import beamsImg from "@/assets/StructuralSteel.jpg";
 import pebImg from "@/assets/pebimage.jpg";
-import shedImg from "@/assets/product-shed.jpg";
+import shedImg from "@/assets/Mezzaninefloor.jpg";
 import roofingImg from "@/assets/commercialsteelbuilding.jpg";
 
 const products = [
