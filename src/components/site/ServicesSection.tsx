@@ -62,19 +62,19 @@ import {
 } from "lucide-react";
 
 const services = [
-  { 
-    t: "Steel Fabrication", 
-    d: "CNC plasma, robotic welding, automated drilling lines.", 
-    i: Cog,
-    color: "#3B82F6",
-    stat: "50K+ tons/year"
-  },
+  {
+  t: "Steel Fabrication",
+  d: "CNC Oxy Fuel / Plasma Cutting, Shearing, Automatic Beam Welding Lines, and all types of Heavy Fabrication Machines.",
+  i: Cog,
+  color: "#3B82F6",
+  stat: "50K+ tons/year"
+},
   { 
     t: "Structural Engineering", 
     d: "BIM-driven design, dynamic and seismic analysis.", 
     i: Layers,
     color: "#6366F1",
-    stat: "500+ projects"
+    stat: "Zero Incidents"
   },
   { 
     t: "Industrial Construction", 
@@ -88,7 +88,7 @@ const services = [
     d: "Wholsale traders in MS plates, channels, angels, tubes, TMT bars, cement and all type of construction  materials. ", 
     i: Shield,
     color: "#EF4444",
-    stat: "Zero incidents"
+    stat: "Committed Deliveries"
   },
   { 
     t: "Installation", 

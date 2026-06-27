@@ -283,12 +283,12 @@ const projects = [
   {
     video: "https://media.istockphoto.com/id/1067393466/video/under-construction-3d-animation.mp4?s=mp4-640x640-is&k=20&c=1fc93JyBA9nS2WxEy4bw3qf6lbG6uxE8w5WXOCuc71E=",
   },
-  {
-    video: "https://media.istockphoto.com/id/1335862361/video/car-factory-3d-concept-automated-robot-arm-assembly-line-manufacturing-advanced-high-tech.mp4?s=mp4-640x640-is&k=20&c=LxudHmzkhDnWdTp3KRwrmyGrDcSacPI-eI9E31IVIdc=",
-  },
-  {
-    video: "https://media.istockphoto.com/id/2272617013/video/drone-ascending-above-large-agricultural-farm-complex.mp4?s=mp4-640x640-is&k=20&c=pinpt07XFVxf__idfle4xdxB5ria0OTo3_CY6qD6HaU=",
-  }
+  // {
+  //   video: "https://media.istockphoto.com/id/1335862361/video/car-factory-3d-concept-automated-robot-arm-assembly-line-manufacturing-advanced-high-tech.mp4?s=mp4-640x640-is&k=20&c=LxudHmzkhDnWdTp3KRwrmyGrDcSacPI-eI9E31IVIdc=",
+  // },
+  // {
+  //   video: "https://media.istockphoto.com/id/2272617013/video/drone-ascending-above-large-agricultural-farm-complex.mp4?s=mp4-640x640-is&k=20&c=pinpt07XFVxf__idfle4xdxB5ria0OTo3_CY6qD6HaU=",
+  // }
 ];
 
 export default function ProjectVideoShowcase() {
