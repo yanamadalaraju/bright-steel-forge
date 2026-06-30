@@ -272,7 +272,7 @@ function ProductsPage() {
         </div>
       </section> */}
 
-     < ProductsCards />
+     <ProductsCards />
 
       {/* SECTION 1: KEY FEATURES */}
       <section className="py-20 relative overflow-hidden">

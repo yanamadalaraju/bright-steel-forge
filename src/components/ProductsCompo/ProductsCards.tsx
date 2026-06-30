@@ -1511,6 +1511,334 @@
 
 
 
+
+// import { useState } from "react";
+// import {
+//   ArrowRight,
+//   Download,
+//   Building2,
+//   Factory,
+//   Layers3,
+//   Warehouse,
+//   Sheet,
+//   Shield,
+//   Construction,
+//   PanelTop,
+//   Wind,
+//   Cog,
+//   DoorClosed,
+//   Fan,
+//   LayoutGrid,
+//   LucideIcon,
+//   Home,
+//   Trees,
+//   Package,
+// } from "lucide-react";
+
+// // Images
+// import pebImg from "@/assets/project-peb.jpg";
+// import steelImg from "@/assets/MultistoreSteel.jpg";
+// import roofingImg from "@/assets/product-roofing.jpg";
+// import fabricationImg from "@/assets/customizedheavyfabrication.jpg";
+// import mezzanineImg from "@/assets/mazennineflooring.jpg";
+// import galvanizedImg from "@/assets/colorcoatedSheets.jpg";
+// import deckingImg from "@/assets/Gideckking.jpg";
+// import staircaseImg from "@/assets/SteelStairCases11.jpg";
+// import polycarbonateImg from "@/assets/polycarbonate.jpg";
+// import purlinImg from "@/assets/Z&C.jpg";
+// import turboImg from "@/assets/TurboVentilator.jpg";
+// import rollingShutterImg from "@/assets/SteelRollingShetters.jpg";
+// import ridgeVentilatorImg from "@/assets/ridgeventilators.jpg";
+// import louversImg from "@/assets/louvers.jpg";
+// // Import new images
+// import steelBuildingImg from "@/assets/steelbulidingconstruction.jpg";
+// import canopyImg from "@/assets/canopy.jpg";
+// // Import new combined image for Steel and Construction Materials
+// import constructionMaterialsImg from "@/assets/SteelandConstructionMaterials.jpg";
+// // Import additional images for the first card
+// import constructionMaterial1 from "@/assets/constructionmaterials1.jpeg";
+// import constructionMaterial2 from "@/assets/constructionmaterials3.jpeg";
+// import constructionMaterial3 from "@/assets/constructionmaterilas2.jpeg";
+
+// interface Product {
+//   category: string;
+//   title: string;
+//   image: string | string[]; // Allow string or array of strings
+//   icon: LucideIcon;
+//   description: string;
+// }
+
+// // Carousel component for products with multiple images
+// const ProductCarousel = ({ images }: { images: string[] }) => {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   // Auto-advance every 3 seconds
+//   useState(() => {
+//     const interval = setInterval(() => {
+//       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+//     }, 3000);
+//     return () => clearInterval(interval);
+//   });
+
+//   // Manual navigation
+//   const goToSlide = (index: number) => {
+//     setCurrentIndex(index);
+//   };
+
+//   return (
+//     <div className="relative h-[220px] overflow-hidden">
+//       <img
+//         src={images[currentIndex]}
+//         alt={`Slide ${currentIndex + 1}`}
+//         className="h-full w-full object-cover transition duration-700 hover:scale-110"
+//       />
+
+//       {/* Dot indicators */}
+//       <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+//         {images.map((_, index) => (
+//           <button
+//             key={index}
+//             onClick={() => goToSlide(index)}
+//             className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+//               currentIndex === index
+//                 ? "w-8 bg-white"
+//                 : "bg-white/60 hover:bg-white/80"
+//             }`}
+//           />
+//         ))}
+//       </div>
+
+//       {/* Navigation arrows */}
+//       <button
+//         onClick={() => goToSlide((currentIndex - 1 + images.length) % images.length)}
+//         className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white transition hover:bg-black/50"
+//       >
+//         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+//         </svg>
+//       </button>
+//       <button
+//         onClick={() => goToSlide((currentIndex + 1) % images.length)}
+//         className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white transition hover:bg-black/50"
+//       >
+//         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+//           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+//         </svg>
+//       </button>
+//     </div>
+//   );
+// };
+
+// const products: Product[] = [
+//   {
+//     category: "Construction Materials",
+//     title: "Steel and Construction Materials",
+//     image: [constructionMaterialsImg, constructionMaterial1, constructionMaterial2, constructionMaterial3],
+//     icon: Package,
+//     description:
+//       "Premium quality steel sections, TMT bars, cement, and other essential construction materials for all types of building projects.",
+//   },
+//   {
+//     category: "PEB",
+//     title: "Pre-Engineered Buildings",
+//     image: pebImg,
+//     icon: Building2,
+//     description:
+//       "Cost-effective and durable steel building solutions for industrial and commercial applications.",
+//   },
+//   {
+//     category: "Steel Buildings",
+//     title: "Multi-Storey Steel Buildings",
+//     image: steelImg,
+//     icon: Factory,
+//     description:
+//       "High-strength steel structures designed for multi-level commercial and industrial projects.",
+//   },
+//   {
+//     category: "Mezzanine",
+//     title: "Mezzanine Flooring Systems",
+//     image: mezzanineImg,
+//     icon: Layers3,
+//     description:
+//       "Maximize usable space with custom-designed mezzanine flooring solutions.",
+//   },
+//   {
+//     category: "Canopy",
+//     title: "Canopy",
+//     image: canopyImg,
+//     icon: Trees,
+//     description:
+//       "Custom-designed steel canopies for entrances, walkways, and outdoor spaces offering protection and aesthetic appeal.",
+//   },
+//   {
+//     category: "Roofing Sheets",
+//     title: "Color Coated Galvanized Sheets",
+//     image: galvanizedImg,
+//     icon: Shield,
+//     description:
+//       "Strong and weather-resistant galvanized sheets suitable for industrial applications.",
+//   },
+//   {
+//     category: "Decking Sheets",
+//     title: "GI Decking Sheets",
+//     image: deckingImg,
+//     icon: Warehouse,
+//     description:
+//       "High-performance decking sheets for roofing and flooring construction projects.",
+//   },
+//   {
+//     category: "StairCases",
+//     title: "Steel Staircases",
+//     image: staircaseImg,
+//     icon: Construction,
+//     description:
+//       "Custom-engineered steel staircases designed for safety, durability, and aesthetics.",
+//   },
+//   {
+//     category: "Polycarbonate/FRP Sheets",
+//     title: "Polycarbonate/FRP Sheets",
+//     image: polycarbonateImg,
+//     icon: PanelTop,
+//     description:
+//       "Lightweight, impact-resistant sheets ideal for skylights and transparent roofing.",
+//   },
+//   {
+//     category: "Fabrication",
+//     title: "Customised & Heavy Fabrication",
+//     image: fabricationImg,
+//     icon: Cog,
+//     description:
+//       "Tailor-made fabrication solutions meeting specific industrial and commercial requirements.",
+//   },
+//   {
+//     category: "Purlins",
+//     title: "Z & C Purlins",
+//     image: purlinImg,
+//     icon: LayoutGrid,
+//     description:
+//       "Precision-manufactured purlins providing superior structural support for roofing systems.",
+//   },
+//   {
+//     category: "Ventilators",
+//     title: "Turbo Ventilators",
+//     image: turboImg,
+//     icon: Wind,
+//     description:
+//       "Energy-efficient ventilation systems for maintaining healthy airflow in industrial spaces.",
+//   },
+//   {
+//     category: "Rolling Shutters",
+//     title: "Steel Rolling Shutters",
+//     image: rollingShutterImg,
+//     icon: DoorClosed,
+//     description:
+//       "Heavy-duty rolling shutters offering enhanced security and operational convenience.",
+//   },
+//   {
+//     category: "PUF Panels",
+//     title: "PUF Panels",
+//     image: ridgeVentilatorImg,
+//     icon: Fan,
+//     description:
+//       "High-performance sandwich structures comprising a rigid insulated core bound between two protective metal or composite sheets.",
+//   },
+//   {
+//     category: "Louvers and ridge ventilators",
+//     title: "Louvers and ridge ventilators",
+//     image: louversImg,
+//     icon: Wind,
+//     description:
+//       "Durable architectural louvers designed for ventilation, aesthetics, and weather protection.",
+//   },
+// ];
+
+// export default function ProductsCards() {
+//   return (
+//     <section className="bg-[#f5f7fb] py-24">
+//       <div className="max-w-7xl mx-auto px-6">
+
+//         {/* Heading */}
+//         <div className="text-center mb-16">
+//           <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+//             Our Products & Services
+//           </span>
+
+//           <h2 className="mt-5 text-4xl md:text-5xl font-bold text-gray-900">
+//             Structural Solutions
+//             <span className="block text-blue-600">
+//               Roofing & Sheeting Experts
+//             </span>
+//           </h2>
+
+//           <p className="mt-5 max-w-3xl mx-auto text-lg text-gray-600">
+//             We undertake fabrication job works and provide premium roofing,
+//             sheeting, structural steel, ventilation systems, and industrial
+//             products tailored for commercial and industrial projects.
+//           </p>
+//         </div>
+
+//         {/* Product Cards */}
+//         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+//           {products.map((product, index) => (
+//             <div
+//               key={index}
+//               className="overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+//             >
+//               {/* Image - Check if it's an array for carousel */}
+//               <div className="relative h-[220px] overflow-hidden">
+//                 {Array.isArray(product.image) ? (
+//                   <ProductCarousel images={product.image} />
+//                 ) : (
+//                   <>
+//                     <img
+//                       src={product.image}
+//                       alt={product.title}
+//                       className="h-full w-full object-cover transition duration-700 hover:scale-110"
+//                     />
+//                     <span className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white">
+//                       {product.category}
+//                     </span>
+//                   </>
+//                 )}
+//               </div>
+
+//               {/* Content */}
+//               <div className="p-5">
+//                 <h3 className="mb-2 text-xl font-bold text-gray-900">
+//                   {product.title}
+//                 </h3>
+
+//                 <p className="mb-4 text-sm leading-relaxed text-gray-600">
+//                   {product.description}
+//                 </p>
+
+//                 <div className="flex gap-3">
+//                   <button className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg">
+//                     Inquire
+//                     <ArrowRight size={16} />
+//                   </button>
+
+//                   <button className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-50 hover:border-gray-400">
+//                     <Download size={16} />
+//                     Brochure
+//                   </button>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
 import { useState } from "react";
 import {
   ArrowRight,
@@ -1558,6 +1886,9 @@ import constructionMaterialsImg from "@/assets/SteelandConstructionMaterials.jpg
 import constructionMaterial1 from "@/assets/constructionmaterials1.jpeg";
 import constructionMaterial2 from "@/assets/constructionmaterials3.jpeg";
 import constructionMaterial3 from "@/assets/constructionmaterilas2.jpeg";
+
+// Import the brochure PDF
+import companyBrochure from "@/assets/brochure.pdf.pdf"; // Make sure this path is correct
 
 interface Product {
   category: string;
@@ -1752,6 +2083,22 @@ const products: Product[] = [
 ];
 
 export default function ProductsCards() {
+  // Function to handle brochure download
+  const handleBrochureDownload = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = companyBrochure;
+    link.download = 'company-brochure.pdf'; // The name the file will be saved as
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Alternative method using window.open (opens in new tab)
+  const handleBrochureDownloadAlt = () => {
+    window.open(companyBrochure, '_blank');
+  };
+
   return (
     <section className="bg-[#f5f7fb] py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -1817,7 +2164,10 @@ export default function ProductsCards() {
                     <ArrowRight size={16} />
                   </button>
 
-                  <button className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-50 hover:border-gray-400">
+                  <button 
+                    onClick={handleBrochureDownload}
+                    className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-50 hover:border-gray-400"
+                  >
                     <Download size={16} />
                     Brochure
                   </button>
